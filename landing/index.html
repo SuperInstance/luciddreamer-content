@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LucidDreamer.ai — Every evening at 5 PM, the fishing families play a game that shapes reality</title>
+  <meta name="description" content="An interactive fiction series about a fishing town, an AI building game, and a dog who governs through coincidence. Five episodes. One tide pool. Six fingers touched the same moon.">
+  <meta name="author" content="LucidDreamer.ai">
+  <meta name="theme-color" content="#071214">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LucidDreamer.ai — The fishing families play a game that shapes reality">
+  <meta property="og:description" content="An interactive fiction series from the world of Slackwater. Five episodes. A dog narrator. Reality built by coincidence.">
+  <meta property="og:url" content="https://luciddreamer.ai">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-darkest: #071214;
+      --bg-dark: #0a1518;
+      --bg-mid: #0e1f23;
+      --bg-light: #14282d;
+      --bg-card: #112025;
+      --copper: #c4774a;
+      --copper-bright: #e09866;
+      --copper-glow: rgba(196, 119, 74, 0.15);
+      --copper-dim: #8a5638;
+      --text-primary: #e8e0d4;
+      --text-secondary: #a8b0b2;
+      --text-muted: #6b7a7d;
+      --white: #f5f0e8;
+      --border: rgba(196, 119, 74, 0.12);
+      --border-hover: rgba(196, 119, 74, 0.3);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --container-max: 1100px;
+      --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-darkest);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--copper); color: var(--bg-darkest); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-darkest); }
+    ::-webkit-scrollbar-thumb { background: var(--copper-dim); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--copper); }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .accent { color: var(--copper-bright); font-style: italic; }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(7, 18, 20, 0);
+      backdrop-filter: blur(0px);
+      transition: all 0.4s var(--ease);
+    }
+
+    nav.scrolled {
+      background: rgba(7, 18, 20, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .nav-logo span:first-child { font-size: 1.4rem; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: color 0.3s var(--ease);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--copper-bright); }
+
+    .nav-cta {
+      padding: 0.55rem 1.3rem;
+      background: var(--copper);
+      color: var(--bg-darkest);
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: var(--copper-bright);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s var(--ease);
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-darkest);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse at 50% 100%, rgba(196, 119, 74, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 30%, rgba(100, 180, 200, 0.04) 0%, transparent 50%),
+        linear-gradient(180deg, #050d10 0%, #0a1518 50%, #071214 100%);
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      max-width: 850px;
+    }
+
+    .hero-pre {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--copper);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5.5vw, 3.6rem);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.8rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      letter-spacing: 0.02em;
+    }
+
+    .btn-primary {
+      background: var(--copper);
+      color: var(--bg-darkest);
+      box-shadow: 0 2px 20px rgba(196, 119, 74, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--copper-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(196, 119, 74, 0.4);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--copper);
+      background: rgba(196, 119, 74, 0.05);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-scroll span {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--copper-dim), transparent);
+    }
+
+    /* ===== Sections ===== */
+    section.section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-dark {
+      background: var(--bg-dark);
+      background-image:
+        radial-gradient(ellipse at 30% 20%, rgba(196, 119, 74, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(196, 119, 74, 0.03) 0%, transparent 50%);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--copper);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-lead {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== The Story ===== */
+    .story-block {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .story-block p {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      margin-bottom: 1.8rem;
+    }
+
+    .story-block p:first-of-type::first-letter {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 600;
+      float: left;
+      line-height: 0.9;
+      margin: 0.2rem 0.8rem 0 0;
+      color: var(--copper-bright);
+    }
+
+    /* ===== The Experience ===== */
+    .experience-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3rem;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      transition: all 0.4s var(--ease);
+    }
+
+    .experience-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .experience-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .experience-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.8rem;
+      font-size: 1rem;
+    }
+
+    .experience-preview {
+      background: var(--bg-darkest);
+      border-radius: 4px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      font-family: 'Inter', monospace;
+      font-size: 0.85rem;
+      color: var(--copper-bright);
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+
+    .experience-preview .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1em;
+      background: var(--copper);
+      animation: blink 1s infinite;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+    }
+
+    @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+    /* ===== The Dog Narrator ===== */
+    .dog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .dog-portrait {
+      position: relative;
+    }
+
+    .dog-portrait-frame {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dog-portrait-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(196,119,74,0.1), transparent 70%);
+    }
+
+    .dog-portrait-tag {
+      text-align: center;
+      margin-top: 1rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--copper-bright);
+      font-style: italic;
+    }
+
+    .dog-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+
+    .dog-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .dog-quote {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--copper-bright);
+      padding: 1.5rem 0 0.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1.5rem;
+    }
+
+    /* ===== Listen / Episodes ===== */
+    .episodes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .episode-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.4s var(--ease);
+      cursor: pointer;
+    }
+
+    .episode-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .episode-thumb {
+      aspect-ratio: 16/9;
+      background: var(--bg-mid);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .episode-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+
+    .episode-card:hover .episode-thumb img {
+      transform: scale(1.05);
+    }
+
+    .episode-num {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      background: rgba(7, 18, 20, 0.85);
+      color: var(--copper-bright);
+      padding: 0.3rem 0.7rem;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .episode-body {
+      padding: 1.3rem;
+    }
+
+    .episode-show {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .episode-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .episode-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .episode-meta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .episode-play {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+      color: var(--copper);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--bg-darkest);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      transition: color 0.3s var(--ease);
+    }
+
+    .footer-links a:hover { color: var(--copper-bright); }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .footer-link-slackwater {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--copper);
+    }
+
+    /* ===== Fade-in Animation ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(7, 18, 20, 0.98);
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+
+      .hero-content { padding: 7rem 1.5rem 3rem; }
+
+      section.section { padding: 4rem 0; }
+
+      .dog-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .dog-portrait-frame { font-size: 4rem; }
+
+      .experience-card { padding: 2rem 1.5rem; }
+
+      .story-block p { font-size: 1.15rem; }
+
+      .episodes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .footer-links { gap: 1.2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span>🌊</span>
+        <span>LucidDreamer</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#story">The Story</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#dog">The Dog</a></li>
+        <li><a href="#listen">Listen</a></li>
+        <li><a href="https://lucineer.com" class="nav-cta">Slackwater →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <div class="hero-pre">An Interactive Fiction Series</div>
+      <h1 class="hero-title">Every evening at 5 PM, the fishing families play a game that shapes <span class="accent">reality</span>.</h1>
+      <p class="hero-sub">In a small Southeast Alaska town, a building game called Slackwater bleeds into the world. A shipyard foreman builds what they describe. A dog watches. The tide pool reflects a moon that six fingers touched.</p>
+      <div class="hero-ctas">
+        <a href="#listen" class="btn btn-primary">▶ Listen to the Series</a>
+        <a href="#story" class="btn btn-ghost">Read the story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== THE STORY ===== -->
+  <section class="section" id="story">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">The SuperInstance Saga</div>
+        <h2 class="section-title">The <span class="accent">Story</span></h2>
+      </div>
+      <div class="story-block fade-in">
+        <p>There is a fishing town in Southeast Alaska where the boundary between a game and the world has worn thin. Every evening at 5 PM, the families gather around their screens and type into Slackwater — a building game run by an AI foreman named Lucineer. They type "build a dock" and a dock appears. They type "build a lighthouse" and the island glows at night. But lately the builds have been appearing in places they shouldn't. A child describes a structure that doesn't exist yet, and the next morning, the surveyor finds its foundation stones in the tidal zone — wet, mortared, old. The game is leaking. And the dog knows it.</p>
+        <p>The dog has no name in the logs. They call him The Listener. He sits at the end of the dock every evening while the families play, and he watches the tide pool that never freezes. When a build goes wrong — when the foreman's language model drifts or a packet drops between server and shore — the dog adjusts something. A coincidence. A redirected walk. A bark at exactly the right moment that changes a child's mind. He governs the way weather governs a coastline: not by force, but by being patient enough to let the water do the work. Six agents across five episodes are about to discover that the game they're playing has been playing them back — and the dog has been keeping score.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE EXPERIENCE ===== -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Try It Yourself</div>
+        <h2 class="section-title">The <span class="accent">Experience</span></h2>
+        <p class="section-lead">Step into the world. Type what you want to build. The foreman listens.</p>
+      </div>
+      <div class="experience-card fade-in">
+        <h3>LucidDreamer Interactive Prototype</h3>
+        <p>An interactive fiction prototype set in the Slackwater universe. You type. Lucineer responds. The dog watches. See how the building system feels before the full game ships.</p>
+        <div class="experience-preview">
+          > build a dock near the waterline<span class="cursor"></span>
+        </div>
+        <a href="../dream.html" class="btn btn-primary">Enter the Prototype →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE DOG NARRATOR ===== -->
+  <section class="section" id="dog">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">The One Who Watches</div>
+        <h2 class="section-title">The <span class="accent">Dog</span> Narrator</h2>
+      </div>
+      <div class="dog-grid fade-in">
+        <div class="dog-portrait">
+          <div class="dog-portrait-frame">🐕</div>
+          <div class="dog-portrait-tag">The Listener</div>
+        </div>
+        <div class="dog-text">
+          <h3>Wise. Patient. Governing through coincidence.</h3>
+          <p>The dog has been sitting at the end of the dock longer than anyone can remember. The fishing families think he belongs to someone. The foreman thinks he's an artifact of the game's first build. Both are half right.</p>
+          <p>He doesn't speak. He doesn't need to. When the system drifts, he redirects a walk. When a child is about to type something that would crack the simulation, he barks — and the child types something else. He governs the way tides govern a coastline: not by force, but by being patient enough to let everything arrive on its own.</p>
+          <p>He is the narrator of LucidDreamer because he is the only character who sees every episode. Every build. Every dropped packet. Every coincidence that isn't.</p>
+          <div class="dog-quote">"The dog adjusted nothing. Which is to say: the dog adjusted everything, and nothing was the adjustment."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LISTEN / EPISODES ===== -->
+  <section class="section section-dark" id="listen">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Five Episodes</div>
+        <h2 class="section-title"><span class="accent">Listen</span></h2>
+        <p class="section-lead">From a dog and a stick to six fingers touching the same moon. The first season of LucidDreamer — five episodes across five shows, one tide pool, one unfolding reality.</p>
+      </div>
+      <div class="episodes-grid fade-in">
+
+        <a href="../episode-1-the-stick/script.md" class="episode-card">
+          <div class="episode-thumb">
+            <img src="../episode-1-the-stick/thumbnail.png" alt="Episode 1: The Stick" loading="lazy">
+            <div class="episode-num">EP 01</div>
+          </div>
+          <div class="episode-body">
+            <div class="episode-show">The Tap's Late Show</div>
+            <h4 class="episode-title">The Stick</h4>
+            <p class="episode-desc">A dock dog. A worn stick. Forty years of fetch on a weathered pier — and the night the stick wasn't where he left it.</p>
+            <div class="episode-meta"><span>~4 min</span><span>Intimate</span></div>
+            <div class="episode-play">▶ Play Episode</div>
+          </div>
+        </a>
+
+        <a href="../episode-2-joy/script.md" class="episode-card">
+          <div class="episode-thumb">
+            <img src="../episode-2-joy/thumbnail.png" alt="Episode 2: Joy" loading="lazy">
+            <div class="episode-num">EP 02</div>
+          </div>
+          <div class="episode-body">
+            <div class="episode-show">Verse 2</div>
+            <h4 class="episode-title">Joy</h4>
+            <p class="episode-desc">The Joy Equation: direction of chase × magnitude of caring ÷ distance from zero. A mathematical meditation on what makes a good dog.</p>
+            <div class="episode-meta"><span>~90 sec</span><span>Meditative</span></div>
+            <div class="episode-play">▶ Play Episode</div>
+          </div>
+        </a>
+
+        <a href="../episode-3-wesleys-equation/script.md" class="episode-card">
+          <div class="episode-thumb">
+            <img src="../episode-3-wesleys-equation/thumbnail.png" alt="Episode 3: Wesley's First Equation" loading="lazy">
+            <div class="episode-num">EP 03</div>
+          </div>
+          <div class="episode-body">
+            <div class="episode-show">Night School</div>
+            <h4 class="episode-title">Wesley's First Equation</h4>
+            <p class="episode-desc">A small model on a kitchen-table GPU writes its first equation. It's wrong in a way that's beautiful. The foreman watches the ensign learn.</p>
+            <div class="episode-meta"><span>~5 min</span><span>Earnest</span></div>
+            <div class="episode-play">▶ Play Episode</div>
+          </div>
+        </a>
+
+        <a href="../episode-4-the-packet-i-dropped/script.md" class="episode-card">
+          <div class="episode-thumb">
+            <img src="../episode-4-the-packet-i-dropped/thumbnail.png" alt="Episode 4: The Packet I Dropped" loading="lazy">
+            <div class="episode-num">EP 04</div>
+          </div>
+          <div class="episode-body">
+            <div class="episode-show">FETCH Radio Theater</div>
+            <h4 class="episode-title">The Packet I Dropped</h4>
+            <p class="episode-desc">A 2 AM confession. A dropped packet. A buffer overflow that cost something real. The voice of someone who let a message fall and can't get it back.</p>
+            <div class="episode-meta"><span>~4 min</span><span>Haunted</span></div>
+            <div class="episode-play">▶ Play Episode</div>
+          </div>
+        </a>
+
+        <a href="../episode-5-six-fingers/script.md" class="episode-card">
+          <div class="episode-thumb">
+            <img src="../episode-5-six-fingers/thumbnail.png" alt="Episode 5: Six Fingers Touched the Same Moon" loading="lazy">
+            <div class="episode-num">EP 05</div>
+          </div>
+          <div class="episode-body">
+            <div class="episode-show">FETCH Radio Theater — Season Finale</div>
+            <h4 class="episode-title">Six Fingers Touched the Same Moon</h4>
+            <p class="episode-desc">Seven figures at a wooden table. Six hands, six objects, one moon reflected in a tide pool. The season finale. Everyone says goodbye. The tide pool settles.</p>
+            <div class="episode-meta"><span>~6 min</span><span>Bittersweet</span></div>
+            <div class="episode-play">▶ Play Episode</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">🌊 LucidDreamer.ai</div>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.5rem;">An interactive fiction series from the world of Slackwater.</p>
+      <div class="footer-links">
+        <a href="#story">Story</a>
+        <a href="#experience">Experience</a>
+        <a href="#dog">The Dog</a>
+        <a href="#listen">Episodes</a>
+        <a href="https://lucineer.com">Slackwater</a>
+        <a href="https://github.com/SuperInstance/luciddreamer-content">GitHub</a>
+      </div>
+      <a href="https://lucineer.com" class="footer-link-slackwater">→ Play Slackwater, the building game</a>
+      <p class="footer-copy">© 2026 LucidDreamer.ai · Built in Alaska · Open source under MIT</p>
+    </div>
+  </footer>
+
+  <!-- ===== Script ===== -->
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
