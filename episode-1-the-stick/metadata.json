@@ -1,0 +1,21 @@
+{
+  "episode": 1,
+  "title": "The Stick",
+  "show": "The Tap's Late Show",
+  "source": "FETCH / Forty Years of Good Dogs",
+  "source_path": "/home/eileen/projects/ai-writings/verse-2/batch-1.md#2-forty-years-of-good-dogs",
+  "voice": "English_Deep-VoicedGentleman",
+  "voice_description": "Warm, gravel-wrapped-in-velvet, unhurried bartender",
+  "length_estimate": "~4 minutes",
+  "genre": "Literary reading + commentary",
+  "mood": ["intimate", "warm", "bittersweet", "contemplative"],
+  "format": "Solo reading + commentary",
+  "slide_count": 5,
+  "slide_prompts": [
+    "A fishing vessel at anchor near a volcanic island in Southeast Alaska at deep twilight, navigation lights painting red and green across black water, a waxing moon reflected in the still harbor, watercolor painting style with rich dark tones",
+    "An old shaggy dock dog sitting at the end of a weathered wooden pier with a smooth worn stick in its mouth, staring at calm gray water, late afternoon light, the dog is patient and dignified, watercolor style",
+    "A smooth river-worn wooden stick lying on weathered dock planks in moonlight, the stick is old and chewed smooth by years of teeth, close-up still life, warm amber and silver tones, watercolor style",
+    "An empty pier at dusk in a small Southeast Alaska fishing town, the wood weathered and silver, mountains in fog behind, a single harbor light reflected in still water, no people, sense of patient absence, watercolor painting",
+    "A whiskey glass on a wooden bar top, half-empty, ice melting, warm amber light from an unseen lamp, blurred background of a dark ship's interior, intimate moody still life, oil painting style"
+  ]
+}

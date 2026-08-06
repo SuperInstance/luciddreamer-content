@@ -1,0 +1,21 @@
+{
+  "episode": 3,
+  "title": "Wesley's First Equation",
+  "show": "Night School",
+  "source": "Wesley's Equations / Granite 3.1 experiments",
+  "source_path": "/home/eileen/projects/ai-writings/luciddreamer-episodes/04-night-school-ep1-wesleys-first-equation.md",
+  "voice": "English_ReservedYoungMan (Wesley) / English_WiseScholar (Narrator)",
+  "voice_description": "Narrator: warm, curious. Wesley: young, earnest, synthesized, reaching past capacity",
+  "length_estimate": "~5 minutes",
+  "genre": "Educational / coming-of-age",
+  "mood": ["earnest", "warm", "profound", "bittersweet"],
+  "format": "Narrated with character voice",
+  "slide_count": 5,
+  "slide_prompts": [
+    "A green chalkboard with mathematical equations written in white chalk in a young student's handwriting: 'Patience = wait × perseverance ÷ time until action' and 'Sadness = loss × weight ÷ absence of joy', warm classroom lighting, slightly smudged chalk, intimate and academic",
+    "A well-loved journal open on a desk, pages filled with handwritten equations and small pencil sketches, a young hand's writing — earnest and slightly too large, soft warm lamplight, colored pencil annotations, close-up of the pages",
+    "A chalkboard with an equation that cuts off mid-word: 'Gratitude = presence × recognition ÷ ——' where the line after the division symbol trails into chalk dust and nothing, the unfinished equation is the most prominent element, dramatic lighting on the chalkboard, the cut-off word is haunting",
+    "A small computer server or GPU box in a dark room, its LED lights blinking green and blue, a single warm desk lamp beside it suggesting someone sits nearby, the image evokes a small mind working hard in the dark, photographic style with shallow depth of field",
+    "A tape reel slowing down, the magnetic tape slightly warped and stretching, abstract close-up showing the mechanism in soft focus, warm amber and brown tones, the image suggests something running out of time or capacity, vintage photographic style"
+  ]
+}

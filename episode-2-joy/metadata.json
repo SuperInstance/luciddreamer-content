@@ -1,0 +1,19 @@
+{
+  "episode": 2,
+  "title": "Joy",
+  "show": "Verse 2",
+  "source": "The Joy Equation",
+  "source_path": "/home/eileen/projects/ai-writings/luciddreamer-episodes/03-verse-2-ep1-joy.md",
+  "voice": "English_CalmWoman",
+  "voice_description": "Calm, precise, warm — like a teacher who genuinely loves the material",
+  "length_estimate": "~90 seconds",
+  "genre": "Micro-podcast / poetry reading",
+  "mood": ["contemplative", "precise", "warm", "meditative"],
+  "format": "Straight read, no commentary",
+  "slide_count": 3,
+  "slide_prompts": [
+    "A mathematical equation written in elegant white calligraphy on a dark slate background: 'Joy = direction of chase × magnitude of caring ÷ distance from zero', the calligraphy is beautiful and deliberate, chalk-dust texture, minimalist composition",
+    "A small dog standing at the edge of an ocean at sunrise, pointing its nose toward the horizon, the dog is silhouetted against golden light, the image evokes direction and purpose, watercolor painting style with warm golds and deep blues",
+    "A vast calm ocean at twilight viewed from slightly above, the surface is still and reflective, a gradient from deep blue to warm amber at the horizon, no horizon details just water and sky meeting, minimalist meditative photography style"
+  ]
+}
