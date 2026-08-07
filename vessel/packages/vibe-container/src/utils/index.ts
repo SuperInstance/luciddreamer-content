@@ -130,3 +130,20 @@ if (typeof window !== 'undefined') {
     console.log(`[Vibe] Debug mode ${enabled ? 'enabled' : 'disabled'}`);
   };
 }
+
+/**
+ * Report a lifecycle event to the parent window.
+ * Safe no-op if not running in an iframe or not handshaked.
+ */
+export function reportLifecycle(lifecycle: unknown): void {
+  if (typeof window === 'undefined' || !window.parent || window.parent === window) return;
+  try {
+    window.parent.postMessage({
+      type: 'lifecycle_change',
+      payload: JSON.stringify({ lifecycle, timestamp: Date.now() }),
+      messageId: generateMessageId(),
+    }, '*');
+  } catch {
+    // Noop — running standalone
+  }
+}

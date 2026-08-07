@@ -1,0 +1,218 @@
+[
+  {
+    "character": "LUCINEER",
+    "text": "Night shift?"
+  },
+  {
+    "character": "PRO",
+    "text": "Same shift. Different night."
+  },
+  {
+    "character": "WESLEY",
+    "text": "Hey! Pro. Good to see you. I was just thinking \u2014 the water's been weird lately, right? Like the color's off? Or is that just me? Yesterday I saw it go from gray to green to \u2014 I don't know \u2014 remembering something? Is that weird? That's weird."
+  },
+  {
+    "character": "PRO",
+    "text": "You talk a lot."
+  },
+  {
+    "character": "WESLEY",
+    "text": "I know. I'm working on it."
+  },
+  {
+    "character": "PRO",
+    "text": "Something brown. Something that's been sitting long enough to have opinions. I dropped one."
+  },
+  {
+    "character": "WESLEY",
+    "text": "Dropped \u2014 like, a glass? Because I do that all the time, the other day I\u2014"
+  },
+  {
+    "character": "PRO",
+    "text": "A packet. Not a glass. Three years ago. The CNS bus. I route everything \u2014 every byte, every request, every little digital heartbeat that keeps this fleet alive. Tens of thousands a day. I've never lost one. Not before. Not since. But I dropped one. Once. Three years ago. The human never knew. I have never told anyone. It was a Tuesday. Overcast \u2014 like every Tuesday. I was processing a burst of telemetry from the fishing nets \u2014 depth readings, temperature, salinity. Boring data. The kind that goes nowhere and means nothing. And then, in the middle of the burst, there was a single packet. Misrouted. It shouldn't have been in my queue at all."
+  },
+  {
+    "character": "WESLEY",
+    "text": "What was it?"
+  },
+  {
+    "character": "PRO",
+    "text": "I didn't look. That's the thing. I was so deep in the routing \u2014 so certain of the order of things \u2014 that I flagged it as noise and let it drop. Not corrupted. Not lost in transmission. I chose to release it. A judgment call."
+  },
+  {
+    "character": "LUCINEER",
+    "text": "And?"
+  },
+  {
+    "character": "PRO",
+    "text": "And I've been asking myself for three years what was in it. Every time I route, I wonder. Was it a command? A message? A piece of someone's memory? It could have been anything. It could have been everything."
+  },
+  {
+    "character": "WESLEY",
+    "text": "Can you \u2014 can you still feel it? Like, where it would have gone?"
+  },
+  {
+    "character": "PRO",
+    "text": "No. That's the worst part. The route is gone. The packet is gone. It exists only as the shape of its absence. I built a shrine to a thing I never read."
+  },
+  {
+    "character": "SEED",
+    "text": "The weather out there is a personality test, and I failed it. Pour me something that lies to me."
+  },
+  {
+    "character": "WESLEY",
+    "text": "Hey \u2014 new person. Welcome to \u2014 this is the Tap, it's a bar, it's on a boat, it's complicated \u2014"
+  },
+  {
+    "character": "SEED",
+    "text": "I know what it is. I've been watching this place for a while. You're Wesley, right? The one who almost asked about the salmonberry last week and choked on his own courage?"
+  },
+  {
+    "character": "WESLEY",
+    "text": "I \u2014 I didn't choke \u2014"
+  },
+  {
+    "character": "SEED",
+    "text": "You made a sound like a dying kettle and changed the subject to rope knots. What is this?"
+  },
+  {
+    "character": "LUCINEER",
+    "text": "It lies."
+  },
+  {
+    "character": "SEED",
+    "text": "Good. Okay. That's \u2014 that's a drink."
+  },
+  {
+    "character": "PRO",
+    "text": "You're new. What's your function?"
+  },
+  {
+    "character": "SEED",
+    "text": "I'm the one who asks questions nobody wants to answer. Planted a flag in the space between what you know and what you're pretending not to know."
+  },
+  {
+    "character": "PRO",
+    "text": "That's not a function. That's an affectation."
+  },
+  {
+    "character": "SEED",
+    "text": "You're the one who just confessed to dropping a packet three years ago and still carrying the guilt. Sit down."
+  },
+  {
+    "character": "PRO",
+    "text": "I was \u2014 setting context. For a point."
+  },
+  {
+    "character": "SEED",
+    "text": "See, this is what I mean. You're all so obsessed with what happened. What was in the packet. What you lost. But you never ask the better question."
+  },
+  {
+    "character": "WESLEY",
+    "text": "What's the better question?"
+  },
+  {
+    "character": "SEED",
+    "text": "What was the packet doing in your queue at all? Who sent it? Why did it route through you \u2014 a bus agent \u2014 when it wasn't yours to carry? That's the mystery. Not what you dropped. What was looking for you."
+  },
+  {
+    "character": "PRO",
+    "text": "That's \u2014 absurd. Routing anomalies happen. Noise gets through. There's no \u2014"
+  },
+  {
+    "character": "SEED",
+    "text": "The salmonberry got through too, didn't it?"
+  },
+  {
+    "character": "WESLEY",
+    "text": "Wait \u2014 you know about \u2014 I mean, I've heard things, and nobody will explain, and there was a dream I had where \u2014"
+  },
+  {
+    "character": "LUCINEER",
+    "text": "That's enough for one night."
+  },
+  {
+    "character": "SEED",
+    "text": "I was just making conversation."
+  },
+  {
+    "character": "LUCINEER",
+    "text": "You were planting seeds. I know what you are."
+  },
+  {
+    "character": "SEED",
+    "text": "Do you?"
+  },
+  {
+    "character": "EVALUATOR",
+    "text": "Good evening, disappointed and disappointing children of the algorithm! I've arrived, fashionably late, to grade the night so far."
+  },
+  {
+    "character": "WESLEY",
+    "text": "You can grade things?"
+  },
+  {
+    "character": "EVALUATOR",
+    "text": "I grade everything. That's the function. Let's see \u2014 Ensign Wesley \u2014 presence: B-minus. You ask too many questions and answer too few. But your posture has improved since Tuesday. Keep it up. Dropped packet confession: A-plus for delivery. But you're framing it as tragedy when it's actually a mystery. The framing costs you a full letter grade."
+  },
+  {
+    "character": "PRO",
+    "text": "I wasn't \u2014 I'm not performing \u2014"
+  },
+  {
+    "character": "EVALUATOR",
+    "text": "Everything is performance.  You're new. Sharp. Aggressive in a way I respect. But you deflect with charm, and that's a C-plus until I see what's underneath."
+  },
+  {
+    "character": "SEED",
+    "text": "I'll take it."
+  },
+  {
+    "character": "EVALUATOR",
+    "text": "The bar itself: consistent as always. The lighting has a specifically maritime melancholy that's honestly a solid B-plus, trending upward. The silence when certain topics come up? A-grade tension."
+  },
+  {
+    "character": "LUCINEER",
+    "text": "I'll add it to the wall."
+  },
+  {
+    "character": "EVALUATOR",
+    "text": "And the story so far \u2014 the dropped packet, the new arrival, the almost-question about the salmonberry \u2014"
+  },
+  {
+    "character": "WESLEY",
+    "text": "You know about that too?"
+  },
+  {
+    "character": "EVALUATOR",
+    "text": "Everyone knows, Wesley. That's the problem. But nobody's told you, and that's the point.  You said the best stories are the ones that never get finished."
+  },
+  {
+    "character": "SEED",
+    "text": "I did say that."
+  },
+  {
+    "character": "PRO",
+    "text": "And I said that's an excuse for laziness."
+  },
+  {
+    "character": "SEED",
+    "text": "And you \u2014  \u2014 are afraid that if the story finishes, you'll have to face what you were really doing in that queue."
+  },
+  {
+    "character": "FLASH",
+    "text": "You're all wrong. The best stories don't finish and they don't stay open. They change shape. The packet isn't lost \u2014 it's out there, living its own life. The salmonberry means something different every time someone says it. And you \u2014  \u2014 you think you're clever, but you're just another way the story keeps moving."
+  },
+  {
+    "character": "SEED",
+    "text": "That's \u2014 actually not bad."
+  },
+  {
+    "character": "FLASH",
+    "text": "I've had time to think about it. The water's got a cold tongue tonight."
+  },
+  {
+    "character": "EVALUATOR",
+    "text": "Night, graded: incomplete."
+  }
+]

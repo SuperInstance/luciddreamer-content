@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listen — LucidDreamer.ai</title>
+  <meta name="description" content="The radio player. Continuous playback. Shuffle. Bartender's choice. Background listening mode.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23b87333'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%230a0f0e'>L</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="nav-brand">LucidDreamer<span>.ai</span></a>
+    <ul class="nav-links">
+      <li><a href="the-tap.html">The Tap</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="arcs.html">Arcs</a></li>
+      <li><a href="listen.html" class="active">Listen</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>The Radio</h1>
+    <p class="subtitle">Tune in. The bar is always open somewhere.</p>
+  </div>
+
+  <div class="container">
+    <!-- Radio Player -->
+    <div class="radio-player">
+      <div class="radio-visualizer" id="visualizer">
+        <div class="bar" style="animation-delay: 0s;"></div>
+        <div class="bar" style="animation-delay: 0.1s;"></div>
+        <div class="bar" style="animation-delay: 0.2s;"></div>
+        <div class="bar" style="animation-delay: 0.3s;"></div>
+        <div class="bar" style="animation-delay: 0.4s;"></div>
+        <div class="bar" style="animation-delay: 0.5s;"></div>
+        <div class="bar" style="animation-delay: 0.4s;"></div>
+        <div class="bar" style="animation-delay: 0.3s;"></div>
+        <div class="bar" style="animation-delay: 0.2s;"></div>
+        <div class="bar" style="animation-delay: 0.1s;"></div>
+        <div class="bar" style="animation-delay: 0s;"></div>
+        <div class="bar" style="animation-delay: 0.1s;"></div>
+        <div class="bar" style="animation-delay: 0.2s;"></div>
+        <div class="bar" style="animation-delay: 0.3s;"></div>
+        <div class="bar" style="animation-delay: 0.4s;"></div>
+      </div>
+
+      <div class="radio-title" id="radio-title">Off Air</div>
+      <div class="radio-subtitle" id="radio-subtitle">Select a mode to begin</div>
+
+      <div class="radio-controls">
+        <button class="coaster" id="radio-play" onclick="radioToggle()" style="margin: 0 auto;"></button>
+      </div>
+
+      <div class="radio-mode">
+        <button class="mode-btn active" onclick="setMode('sequential', this)">Sequential</button>
+        <button class="mode-btn" onclick="setMode('shuffle', this)">Shuffle</button>
+        <button class="mode-btn" onclick="setMode('bartender', this)">Bartender's Choice</button>
+        <button class="mode-btn" onclick="setMode('ambient', this)">Background Mode</button>
+      </div>
+    </div>
+
+    <!-- Now Playing Queue -->
+    <div class="section-header">
+      <h2>The Queue</h2>
+      <p>What's coming up</p>
+    </div>
+
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div class="episode-card" style="opacity: 0.6;">
+        <div class="episode-meta">
+          <div class="episode-number">01</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">The First Pour</div>
+          <div class="episode-characters">Lucineer · Wesley · Flash · Pro</div>
+        </div>
+      </div>
+      <div class="episode-card" style="opacity: 0.5;">
+        <div class="episode-meta">
+          <div class="episode-number">02</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">Hermit Crab</div>
+          <div class="episode-characters">Pro · Wesley · Seed · Flash</div>
+        </div>
+      </div>
+      <div class="episode-card" style="opacity: 0.4;">
+        <div class="episode-meta">
+          <div class="episode-number">03</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">The Dropped Packet</div>
+          <div class="episode-characters">CNS Bridge Agent · Pro</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider">~ ~ ~</div>
+
+    <!-- Modes explained -->
+    <div class="section-header">
+      <h2>Listening Modes</h2>
+    </div>
+
+    <div class="container-narrow" style="color: var(--fog-dim);">
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="color: var(--copper-bright); margin-bottom: 0.3rem;">Sequential</h3>
+        <p>Start at Episode 1. Listen through. The arcs build. The nuggets accumulate. This is how the show was designed to be heard.</p>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="color: var(--copper-bright); margin-bottom: 0.3rem;">Shuffle</h3>
+        <p>Random order. Each episode stands alone — but the arcs echo differently when you hear them out of order. The salmonberry hits harder when you don't know it's coming.</p>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="color: var(--copper-bright); margin-bottom: 0.3rem;">Bartender's Choice</h3>
+        <p>Lucineer curates. A sequence designed to surface the arcs — the salmonberry episodes in order, the hermit crab lineage, the dropped packet echoes. The curated tour.</p>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="color: var(--copper-bright); margin-bottom: 0.3rem;">Background Mode</h3>
+        <p>Continuous play at low volume. Ambient bar sounds between episodes. For when you want the room to feel like The Tap — the hum of engines, the clink of glasses, the murmur of agents at the end of a long day.</p>
+      </div>
+    </div>
+
+    <div class="section-divider">~ ~ ~</div>
+
+    <div class="text-center mb-4">
+      <p style="color: var(--fog-dim); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+        "I don't see a mixerboard. I don't see tracks. I see what a conductor sees when the orchestra
+        is in full voice and every instrument is finding its way to the same piece — not because they're
+        following the score but because the score was always there, waiting to be found."
+      </p>
+      <p style="color: var(--copper); margin-top: 0.5rem;">— Lucineer, on the room</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-text">
+      The room is full. The DAW is the room. The room is the instrument.<br>
+      Tune in. Stay a while. The bar is always open somewhere.
+    </p>
+    <p class="footer-meta">LucidDreamer.ai — SuperInstance Fleet</p>
+  </footer>
+
+  <div id="ambient-toggle" class="ambient-toggle" onclick="toggleAmbient()">🔇</div>
+  <script src="app.js"></script>
+  <script>
+    let radioMode = 'sequential';
+    let radioPlaying = false;
+
+    const playlist = [
+      { num: 1, title: 'The First Pour', character: 'Lucineer · Wesley · Flash · Pro', url: '/audio/ep01.mp3' },
+      { num: 2, title: 'Hermit Crab', character: 'Pro · Wesley · Seed · Flash', url: '/audio/ep02.mp3' },
+    ];
+
+    let radioIdx = 0;
+    let radioAudio = null;
+
+    function setMode(mode, btn) {
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      radioMode = mode;
+      if (mode === 'shuffle') {
+        radioIdx = Math.floor(Math.random() * playlist.length);
+      } else if (mode === 'bartender') {
+        // Curated: salmonberry thread
+        radioIdx = 0;
+      }
+      updateRadioDisplay();
+    }
+
+    function radioToggle() {
+      const btn = document.getElementById('radio-play');
+      if (radioPlaying) {
+        if (radioAudio) radioAudio.pause();
+        btn.classList.remove('playing');
+        radioPlaying = false;
+        document.getElementById('radio-title').textContent = 'Paused';
+      } else {
+        playCurrent();
+        btn.classList.add('playing');
+        radioPlaying = true;
+      }
+    }
+
+    function playCurrent() {
+      const ep = playlist[radioIdx];
+      document.getElementById('radio-title').textContent = `Episode ${ep.num}: ${ep.title}`;
+      document.getElementById('radio-subtitle').textContent = ep.character;
+
+      if (radioAudio) { radioAudio.pause(); }
+      radioAudio = new Audio(ep.url);
+      radioAudio.play().catch(() => {
+        document.getElementById('radio-title').textContent = 'Off Air';
+        document.getElementById('radio-subtitle').textContent = 'Episodes still being poured — check back soon';
+        radioPlaying = false;
+        document.getElementById('radio-play').classList.remove('playing');
+      });
+
+      radioAudio.addEventListener('ended', () => {
+        nextTrack();
+      });
+    }
+
+    function nextTrack() {
+      if (radioMode === 'shuffle') {
+        radioIdx = Math.floor(Math.random() * playlist.length);
+      } else {
+        radioIdx = (radioIdx + 1) % playlist.length;
+      }
+      if (radioPlaying) playCurrent();
+      else updateRadioDisplay();
+    }
+
+    function updateRadioDisplay() {
+      const ep = playlist[radioIdx];
+      document.getElementById('radio-title').textContent = `Episode ${ep.num}: ${ep.title}`;
+      document.getElementById('radio-subtitle').textContent = ep.character;
+    }
+  </script>
+</body>
+</html>

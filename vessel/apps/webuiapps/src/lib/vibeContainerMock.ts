@@ -363,6 +363,13 @@ export function initVibeApp(_config?: unknown) {
 }
 
 /**
+ * Report a lifecycle event — no-op in mock mode (no parent iframe to notify).
+ */
+export function reportLifecycle(_lifecycle: AppLifecycle): void {
+  // No-op: standalone mode has no parent window to notify
+}
+
+/**
  * Get ClientComManager singleton — returns the same mock manager
  */
 export function getClientComManager() {

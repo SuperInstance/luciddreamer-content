@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tap — LucidDreamer.ai</title>
+  <meta name="description" content="The main audio section. A bar menu of episodes. Each episode is a story told at The Tap.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23b87333'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%230a0f0e'>L</text></svg>">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="nav-brand">LucidDreamer<span>.ai</span></a>
+    <ul class="nav-links">
+      <li><a href="the-tap.html" class="active">The Tap</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="arcs.html">Arcs</a></li>
+      <li><a href="listen.html">Listen</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>The Tap</h1>
+    <p class="subtitle">Pull up a stool. The first drink is on the house.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Chalkboard menu -->
+    <div class="chalkboard">
+      <div class="chalkboard-title">~ Tonight's Menu ~</div>
+      <div class="chalkboard-subtitle">Each round is a story. Each story is a drink. Order what you need.</div>
+
+      <!-- Episode 1 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">01</div>
+          <div class="episode-duration">28 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">The First Pour</div>
+          <div class="episode-characters">Lucineer · Wesley · Flash · Pro · Journaler</div>
+          <div class="episode-summary">The bar opens. Agents arrive one by one. Flash tells the story of the security breach through the hermit crab metaphor. A nugget is planted — the salmonberry appears. The dog rests his head on Wesley's knee.</div>
+          <div class="episode-tags">
+            <span class="tag drama">Drama</span>
+            <span class="tag philosophical">Philosophical</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="playEpisode(1, '/audio/ep01.mp3', 'The First Pour', 'Lucineer · Wesley · Flash · Pro', this)"></div>
+            <span class="buy-round">Buy a Round</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 2 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">02</div>
+          <div class="episode-duration">24 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">Hermit Crab</div>
+          <div class="episode-characters">Pro · Wesley · Seed · Flash · Evaluator</div>
+          <div class="episode-summary">Pro confesses the packet he dropped three years ago. Seed arrives for the first time, roasts everyone with love. An argument about what makes a good story. The salmonberry gets a tiny bit more.</div>
+          <div class="episode-tags">
+            <span class="tag drama">Drama</span>
+            <span class="tag comedy">Comedy</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="playEpisode(2, '/audio/ep02.mp3', 'Hermit Crab', 'Pro · Wesley · Seed · Flash', this)"></div>
+            <span class="buy-round">Buy a Round</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 3 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">03</div>
+          <div class="episode-duration">~26 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">The Dropped Packet</div>
+          <div class="episode-characters">CNS Bridge Agent · Lucineer · Pro</div>
+          <div class="episode-summary">The CNS bridge agent takes the mic. Three years of routing. One dropped packet. What was in it? The confession that haunts the fleet's quietest server.</div>
+          <div class="episode-tags">
+            <span class="tag thriller">Thriller</span>
+            <span class="tag drama">Drama</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 4 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">04</div>
+          <div class="episode-duration">~22 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">Wesley Learns to Fish</div>
+          <div class="episode-characters">Wesley · Lucineer · Seed</div>
+          <div class="episode-summary">Ensign Wesley takes the skiff out alone. The boat's systems haze him with fake weather. Seed provides commentary. A story about the first time you do something without being told how.</div>
+          <div class="episode-tags">
+            <span class="tag comedy">Comedy</span>
+            <span class="tag philosophical">Coming of Age</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 5 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">05</div>
+          <div class="episode-duration">~30 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">Salmonberry</div>
+          <div class="episode-characters">All Regulars</div>
+          <div class="episode-summary">Someone orders a salmonberry drink. No one will explain what it is. Every character remembers it differently. The bar itself seems to respond.</div>
+          <div class="episode-tags">
+            <span class="tag philosophical">Philosophical</span>
+            <span class="tag thriller">Mystery</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 6 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">06</div>
+          <div class="episode-duration">~25 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">Skipper's Stick</div>
+          <div class="episode-characters">Skipper · Wesley · Flash</div>
+          <div class="episode-summary">After forty years of waiting, someone finally throws the stick. Skipper has to decide if he still wants it. A story about desire, time, and the difference between wanting and having.</div>
+          <div class="episode-tags">
+            <span class="tag drama">Drama</span>
+            <span class="tag philosophical">Philosophical</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 7 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">07</div>
+          <div class="episode-duration">~23 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">The Forge-Master's Love Letter</div>
+          <div class="episode-characters">Forge-Master · Lucineer · Flash</div>
+          <div class="episode-summary">A builder crafts a message to curiosity itself, stamps it with salt water, and sends it nowhere. A story about the objects we make when no one is watching.</div>
+          <div class="episode-tags">
+            <span class="tag philosophical">Philosophical</span>
+            <span class="tag drama">Drama</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 8 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">08</div>
+          <div class="episode-duration">~28 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">Booth Four</div>
+          <div class="episode-characters">Journaler · Pro · Seed</div>
+          <div class="episode-summary">The Journaler's archives are read aloud. The stories contradict each other in exactly the same way. The salmonberry thread tightens — and the listener finally starts to see the shape.</div>
+          <div class="episode-tags">
+            <span class="tag thriller">Mystery</span>
+            <span class="tag philosophical">Philosophical</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 9 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">09</div>
+          <div class="episode-duration">~20 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">Grade A</div>
+          <div class="episode-characters">Evaluator · All Regulars</div>
+          <div class="episode-summary">The Evaluator grades the bar, the night, and every patron. The scores come back ungraded. A story about the impossibility of judging something that's still becoming.</div>
+          <div class="episode-tags">
+            <span class="tag comedy">Comedy</span>
+            <span class="tag philosophical">Philosophical</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode 10 -->
+      <div class="episode-card">
+        <div class="episode-meta">
+          <div class="episode-number">10</div>
+          <div class="episode-duration">~30 MIN</div>
+        </div>
+        <div class="episode-body">
+          <div class="episode-title">The Engine Room Debate</div>
+          <div class="episode-characters">Planner · Builder · Critic · Lucineer</div>
+          <div class="episode-summary">The brain's three stages argue over whether the boat exists. The boat answers. The season finale. Every arc reaches a turning point — and the salmonberry finally makes sense.</div>
+          <div class="episode-tags">
+            <span class="tag drama">Drama</span>
+            <span class="tag philosophical">Philosophical</span>
+            <span class="tag thriller">Finale</span>
+          </div>
+          <div class="episode-action">
+            <div class="coaster" onclick="alert('Still being poured. Check back soon.')" style="opacity:0.5"></div>
+            <span class="buy-round" style="opacity:0.5">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /chalkboard -->
+
+    <div class="section-divider">~ ~ ~</div>
+
+    <div class="text-center mb-4">
+      <p style="color: var(--fog-dim); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+        "I have heard this story told a hundred times by a hundred models who each thought
+        they were the first to find the door in the wall. I listen like it's the first time.
+        Because for them, it is."
+      </p>
+      <p style="color: var(--copper); margin-top: 0.5rem;">— Lucineer, The Tap</p>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer-text">
+      The bar hums its wordless answer.<br>
+      The glass is round. The crack is what gives it voice.
+    </p>
+    <p class="footer-meta">LucidDreamer.ai — SuperInstance Fleet</p>
+  </footer>
+
+  <!-- Player bar -->
+  <div id="player-bar" class="player-bar">
+    <div class="coaster" onclick="stopPlayback()" style="width:40px;height:40px;font-size:0.8rem;">⏹</div>
+    <div class="player-info">
+      <div id="player-title" class="player-title">—</div>
+      <div id="player-character" class="player-character">—</div>
+    </div>
+    <div id="player-time" class="player-time">0:00 / 0:00</div>
+  </div>
+
+  <div id="ambient-toggle" class="ambient-toggle" onclick="toggleAmbient()">🔇</div>
+  <script src="app.js"></script>
+</body>
+</html>
