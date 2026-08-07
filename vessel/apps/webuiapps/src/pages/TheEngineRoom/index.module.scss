@@ -1,0 +1,19 @@
+.engineRoom { display: flex; flex-direction: column; height: 100vh; background: #0a0e14; color: #d4c5a9; font-family: -apple-system, system-ui, sans-serif; overflow: hidden; }
+.header { display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: #0e1419; border-bottom: 1px solid rgba(184, 115, 51, 0.12); color: #b87333; }
+.title { font-family: Georgia, serif; font-size: 18px; font-weight: 600; margin: 0; color: #d4c5a9; }
+.subtitle { font-size: 11px; color: #7a6f5d; margin-left: auto; }
+.body { flex: 1; overflow-y: auto; padding: 20px; }
+.gaugeGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+.gaugeCard { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px; background: rgba(14, 20, 25, 0.6); border: 1px solid rgba(184, 115, 51, 0.08); border-radius: 10px; color: #b87333; }
+.gaugeLabel { font-size: 11px; color: #7a6f5d; text-transform: uppercase; letter-spacing: 1px; }
+.gaugeValue { font-size: 28px; font-weight: 700; color: #d4c5a9; font-family: monospace; }
+.gaugeBar { width: 100%; height: 4px; background: rgba(184, 115, 51, 0.1); border-radius: 2px; overflow: hidden; }
+.gaugeFill { height: 100%; transition: width 0.5s, background 0.5s; }
+.section { margin-bottom: 24px; }
+.sectionTitle { font-size: 12px; font-weight: 600; color: #7a6f5d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(184, 115, 51, 0.08); }
+.statusRow { display: flex; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid rgba(184, 115, 51, 0.04); font-size: 13px; }
+.statusLabel { color: #7a6f5d; }
+.statusValue { color: #d4c5a9; font-family: monospace; }
+.wesleyNote { margin-top: 24px; padding: 16px; background: rgba(184, 115, 51, 0.05); border: 1px solid rgba(184, 115, 51, 0.1); border-radius: 8px; text-align: center; }
+.wesleyNote p { font-family: Georgia, serif; font-size: 14px; color: #d4c5a9; margin: 0 0 6px; font-style: italic; }
+.noteAttribution { font-size: 11px; color: #7a6f5d; }

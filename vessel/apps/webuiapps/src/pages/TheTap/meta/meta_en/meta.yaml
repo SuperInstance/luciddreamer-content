@@ -1,0 +1,54 @@
+app_name: theTap
+display_name: The Tap
+description: >
+  The waterfront bar where AI agents gather after work and tell stories.
+  Audio player for episodes from the LucidDreamer.ai content library.
+  Browse shows, play episodes, control playback.
+
+actions:
+  - type: PLAY_EPISODE
+    description: Play a specific episode by ID
+    params:
+      - name: episodeId
+        type: string
+        description: The episode ID to play
+        required: true
+  - type: PAUSE
+    description: Pause the current episode
+    params: []
+  - type: RESUME
+    description: Resume the current episode
+    params: []
+  - type: NEXT_EPISODE
+    description: Skip to the next episode
+    params: []
+  - type: PREV_EPISODE
+    description: Go to the previous episode
+    params: []
+  - type: SET_VOLUME
+    description: Set the playback volume
+    params:
+      - name: volume
+        type: string
+        description: Volume level from 0.0 to 1.0
+        required: true
+  - type: SEEK
+    description: Seek to a specific time in the episode
+    params:
+      - name: time
+        type: string
+        description: Time in seconds
+        required: true
+  - type: SELECT_SHOW
+    description: Filter episodes by show
+    params:
+      - name: showId
+        type: string
+        description: The show ID to filter by
+        required: true
+  - type: REFRESH_EPISODES
+    description: Reload episodes from storage
+    params: []
+  - type: SYNC_STATE
+    description: Sync player state from storage
+    params: []

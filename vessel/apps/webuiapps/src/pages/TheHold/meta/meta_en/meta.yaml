@@ -1,0 +1,24 @@
+app_name: theHold
+display_name: The Hold
+description: >
+  The creative corpus browser. Search the ai-writings library by title,
+  theme, or content. Results powered by semantic search (Vectorize in Phase 2).
+
+actions:
+  - type: SEARCH_CORPUS
+    description: Search the corpus for pieces matching a query
+    params:
+      - name: query
+        type: string
+        description: The search query
+        required: true
+  - type: OPEN_PIECE
+    description: Open a specific piece by ID
+    params:
+      - name: pieceId
+        type: string
+        description: The piece ID to open
+        required: true
+  - type: REFRESH_RESULTS
+    description: Refresh search results
+    params: []

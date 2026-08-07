@@ -1,0 +1,122 @@
+.window {
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0e1419;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(184, 115, 51, 0.12),
+    0 0 0 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  min-height: 200px;
+}
+
+.titleBar {
+  height: 38px;
+  background: linear-gradient(180deg, #1a2330 0%, #121821 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  cursor: grab;
+  user-select: none;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(184, 115, 51, 0.12);
+
+  /* Brass fitting effect */
+  box-shadow: inset 0 1px 0 rgba(184, 115, 51, 0.08);
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #d4c5a9;
+  font-family: Georgia, serif;
+  letter-spacing: 0.5px;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.actionBtn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(184, 115, 51, 0.12);
+  color: rgba(212, 197, 169, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  &:hover {
+    background: rgba(184, 115, 51, 0.25);
+    color: #d4c5a9;
+  }
+}
+
+.closeBtn {
+  &:hover {
+    background: #a83232;
+    color: #fff;
+  }
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.contentInner {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  transform: translateZ(0);
+
+  > * {
+    height: 100% !important;
+    max-height: 100%;
+  }
+}
+
+.resizeHandle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid rgba(184, 115, 51, 0.3);
+    border-bottom: 2px solid rgba(184, 115, 51, 0.3);
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(212, 197, 169, 0.5);
+  font-size: 13px;
+  font-family: Georgia, serif;
+}
